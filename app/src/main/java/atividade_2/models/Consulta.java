@@ -2,6 +2,7 @@ package atividade_2.models;
 
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.List;
 
 public class Consulta {
     private Date data;
@@ -10,6 +11,8 @@ public class Consulta {
     private Paciente paciente;
     private String motivo;
     private String historico;
+    private List<Exame> exames;
+    private List<Receita> receitas;
 
     public Consulta(){}
     
@@ -60,6 +63,14 @@ public class Consulta {
     public void setHistorico(String historico) {
         this.historico = historico;
     }
+    
+    public List<Exame> getExames() {
+        return exames;
+    }
+
+    public void setExames(List<Exame> exames) {
+        this.exames = exames;
+    }
 
     public boolean Marcar(){
         return true;
@@ -89,4 +100,13 @@ public class Consulta {
 
         
     }
+
+    public List<Receita> getReceitas() {
+        return receitas;
+    }
+
+    public void setReceitas(List<Receita> receitas) {
+        this.receitas = receitas;
+    }
+
 }

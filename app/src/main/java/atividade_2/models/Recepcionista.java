@@ -1,6 +1,10 @@
 package atividade_2.models;
 
-public class Recepcionista extends Usuario {
+import java.util.Date;
+
+import atividade_2.Repository.IUsuario;
+
+public class Recepcionista extends Usuario implements IUsuario<Recepcionista>{
    
     private String cpf;
     private String telefone;
@@ -39,13 +43,34 @@ public class Recepcionista extends Usuario {
         
     }
     
+    public Agenda marcarAgenda() throws Exception{
+        Paciente p1 = new Paciente();
+        p1.setCpf("123456789-44");
+        p1.setTelefone("11954685542");
+        p1.setNome("Jose da silva");
+    
+        Medico m1 = new Medico();
+        m1.setCrm("234234234");
+        m1.setEspecialidade("Geriatra");
+        m1.setNome("Maria Antonieta");
+        m1.setTelefone("2344-2344");
 
-    @Override
-    public <T extends Usuario> boolean acessar(T usuario){
-        if(usuario.getNome() != null && usuario.getSenha() != null)
-            return true;
-
-        return false;
+        Agenda a1 = new Agenda();
+        a1.setData(new Date());
+        a1.setMedico(m1);
+        a1.setPaciente(p1);
+        return a1;
     }
     
+
+    @Override
+    public boolean acessar(Recepcionista usuario) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean desconectar(Recepcionista usuario) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }

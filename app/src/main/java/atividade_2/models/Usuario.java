@@ -29,5 +29,4 @@ public abstract class Usuario {
         this.senha = senha;
     }
 
-    public <T extends Usuario> boolean acessar(T usuario){return  true;};
 }

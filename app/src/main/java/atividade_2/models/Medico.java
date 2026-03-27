@@ -1,7 +1,11 @@
 package atividade_2.models;
 
+import java.util.Date;
 
-public class Medico extends Usuario {
+import atividade_2.Repository.IUsuario;
+
+
+public class Medico extends Usuario implements IUsuario<Medico>{
     private String crm;
     private String telefone;
     private String especialidade;
@@ -36,13 +40,6 @@ public class Medico extends Usuario {
     public String getEspecialidade(){return especialidade; };
     public void setEspecialidade(String especialidade){this.especialidade = especialidade;}
 
-    @Override
-    public <T extends Usuario> boolean acessar(T usuario){
-        if(usuario.getNome() != null && usuario.getSenha() != null)
-            return true;
-
-        return false;
-    }
 
     public void mostar(Medico medico){
         
@@ -51,7 +48,37 @@ public class Medico extends Usuario {
         System.out.println("CRM: " + medico.getCrm());
         System.out.println("Telefone: " + medico.getTelefone());
         System.out.println("Especialidade: " + medico.getEspecialidade());
-
-        
     }
+
+    public void realizarConsulta(Agenda agenda) throws Exception{
+        Consulta c1 = new Consulta();
+
+        c1.setData(agenda.getData());
+        c1.setHora(agenda.getHora());
+        c1.setMedico(agenda.getMedico());
+        c1.setPaciente(agenda.getPaciente());
+        c1.setMotivo("Dor ");
+        c1.setHistorico("dores anteriores");
+
+        Exame e1 = new Exame(c1, agenda.getData(), "muitas coisas");
+
+        c1.getExames().add(e1);
+        c1.getExames().add(new Exame(c1, new Date(), "eita ne"));
+        c1.getReceitas().add(new Receita(c1, new Date(), "vish"));
+        c1.mostrar(c1);
+
+
+    }
+
+    @Override
+    public boolean acessar(Medico usuario) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean desconectar(Medico usuario) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+
 }
