@@ -1,12 +1,12 @@
 package com.fatec.ads;
 
-public class Recepcionista extends Paciente {
-    
+public class Recepcionista extends Funcionario {
     String cpf;
 
-
-    public void acessar(){}
-
+    @Override
+    public void acessar(){
+        System.out.println("Recepcionista " + super.getNome() + " acessando sistema de agendamento e cadastro de pacientes.");
+    }
 
     public String getCpf() {
         return cpf;
@@ -25,11 +25,9 @@ public class Recepcionista extends Paciente {
     public Recepcionista() {
     }
 
-   
     public void mostrar() {
        
-    };
-
+    }
 
     public Agenda marcarAgenda() throws Exception{
         Paciente p1 = new Paciente();

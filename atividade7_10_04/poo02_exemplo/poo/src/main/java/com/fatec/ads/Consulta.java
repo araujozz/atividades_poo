@@ -27,6 +27,12 @@ public class Consulta extends Agenda {
     public void realizar(){};
     public void atualizar(){}
    
+    @Override
+    public void consultar(){
+        System.out.println("Consultando consulta: Data " + super.getData() + ", Hora " + super.getHora() + ", Médico " + 
+        (medico != null ? super.medico.getNome() : "N/A") + ", Paciente " + (paciente != null ? super.paciente.getNome() : "N/A") + ", Motivo: " + getMotivo());
+    }
+   
     public String getMotivo() {
         return motivo;
     }

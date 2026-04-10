@@ -4,7 +4,9 @@ public class Exame extends  Prodecimento {
     
 
     public void solicitar(){}
-    public void consultar(){}
+    public void consultar(){
+        System.out.println("Consultando exame: Data " + super.getData() + ", Descritivo: " + super.getDescritivo());
+    }
 
    
    
@@ -14,6 +16,7 @@ public class Exame extends  Prodecimento {
         this.descritivo = descritivo;
     }
     public Exame() {
+
     }
    
     public void mostrar() {

@@ -1,0 +1,15 @@
+Samuel Goes C. de Araujo - Atividade 1 POO
+1-Responda a pergunta, o que e polimorfismo e qual sua utilização?
+R: O polimorfismo é a capacidade de tratar objetos diferentes de maneira uniforme, permitindo que um mesmo método tenha comportamentos distintos dependendo do contexto. Esse conceito aumenta a flexibilidade e a reutilização do código.
+ 
+Na prática, o polimorfismo permite que um programa utilize uma única interface para representar diferentes tipos de objetos, tornando o sistema mais genérico e extensível. 
+
+Existem duas formas principais de polimorfismo: 
+
+Sobrescrita (override): ocorre quando uma subclasse redefine um método da superclasse, alterando seu comportamento. 
+
+Sobrecarga (overload): ocorre quando métodos possuem o mesmo nome, mas diferem nos parâmetros. 
+
+2-Utilizando a correção da atividade poo06, implemente nas subclasses(Recepcionista, Medico, Consulta, Receita e Exame)  os metodos refatorados utilizandos polimorfismo adicionando carcteristicas das subclasses.
+
+GitHub: https://github.com/araujozz/atividades_poo.git

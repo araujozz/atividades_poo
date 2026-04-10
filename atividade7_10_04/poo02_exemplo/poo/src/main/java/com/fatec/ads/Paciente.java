@@ -1,6 +1,6 @@
 package com.fatec.ads;
 
-public class Paciente {
+public class Paciente extends Consulta {
     private int codigo;
     private String nome;
     private String email;
@@ -27,6 +27,15 @@ public class Paciente {
             this.email = email;
         }
     }
+    public void cadastrar(){
+        System.out.println("Cadastro Realizado:");
+    }
+    @Override
+    public void consultar(){
+        System.out.println("Consultando consulta: Data " + data + ", Hora " + hora + ", Médico " + 
+        (medico != null ? medico.getNome() : "N/A") + ", Paciente " + (paciente != null ? paciente.getNome() : "N/A")
+         + ", Motivo: " + motivo + ", Email:" + paciente.getEmail());
+    }
 
     public Paciente(){
         this.codigo=0;
@@ -34,11 +43,10 @@ public class Paciente {
         this.email="";
     }
     public Paciente(int pCodigo, String pNome, String pEmail) throws Exception{
-        setCodigo(pCodigo);
+        this.codigo = pCodigo;
         setEmail(pEmail);
-        setNome(pNome);
+        this.nome = pNome;
     }
-
     public void mostrar() {
         var s = "Paciente [getCodigo()=" + getCodigo() + ", getNome()=" + getNome() + ", getEmail()=" + getEmail()
                 + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()

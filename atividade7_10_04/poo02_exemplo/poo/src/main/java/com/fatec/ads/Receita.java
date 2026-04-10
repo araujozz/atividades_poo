@@ -7,8 +7,13 @@ public class Receita extends  Prodecimento {
         this.descritivo = descritivo;
     }
 
-    public void preescrever(){};
-    public void consultar(){}
+    public void preescrever(){
+        System.out.println(data + descritivo);
+    };
+
+    public void consultar(){
+        System.out.println("Consultando receita: Data " + super.getData() + ", Descritivo: " + super.getDescritivo());
+    }
    
     public Receita() {
     }

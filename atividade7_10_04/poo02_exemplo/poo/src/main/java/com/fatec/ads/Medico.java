@@ -4,9 +4,9 @@ public class Medico extends Funcionario {
      String especialidade;
     String crm;
  
-
+    @Override
     public void acessar(){
-        //TODO
+        System.out.println("Médico " + super.getNome() + " acessando sistema de prontuários médicos com especialidade em " + especialidade + ".");
     }
 
 
